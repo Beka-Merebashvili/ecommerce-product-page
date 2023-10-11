@@ -8,19 +8,7 @@ interface MenuProps {
 }
 
 
-const MenuItem = styled.a`
-  text-decoration: none;
-  color: #1d2026;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px;
-  padding: 15px 0;
 
-  &:hover {
-    background-color: #444;
-  }
-`;
 
 const Menu: React.FC<MenuProps> = ({ open, setOpen }) => {
   return (
@@ -40,6 +28,7 @@ export default Menu;
 const StyledMenu = styled.nav<{ open: boolean }>`
   display: flex;
   flex-direction: column;
+  gap: 15px;
   background-color: #e76666;
   transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(-100%)")};
   transition: transform 0.3s ease-in-out;
@@ -55,5 +44,19 @@ const StyledMenu = styled.nav<{ open: boolean }>`
     height: 13px;
     margin-bottom: 50px;
     cursor: pointer;
+  }
+`;
+
+const MenuItem = styled.a`
+  text-decoration: none;
+  color: #1d2026;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  
+
+  &:hover {
+    background-color: #444;
   }
 `;

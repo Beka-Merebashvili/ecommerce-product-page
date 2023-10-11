@@ -22,5 +22,6 @@ const StyledBurger = styled.div<{ open: boolean }>`
     width: 16px;
     height: 15px;
     cursor: pointer;
+    margin-top: 10px;
   }
 `;
