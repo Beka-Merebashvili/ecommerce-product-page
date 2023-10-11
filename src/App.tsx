@@ -1,15 +1,13 @@
- 
-import Header from './components/Header';
- 
+import Header from "./components/Header";
+import Globalstyles from "./styled-components/GlobalStyles";
 
 function App() {
-  
-
   return (
     <>
-       <Header/>
+      <Globalstyles />
+      <Header />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
