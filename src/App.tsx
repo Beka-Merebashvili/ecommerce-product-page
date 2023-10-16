@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import SliderCarousel from "./components/SliderCarousel";
 import Globalstyles from "./styled-components/GlobalStyles";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Globalstyles />
       <Header />
+      <SliderCarousel />
     </>
   );
 }
