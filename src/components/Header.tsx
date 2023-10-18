@@ -7,7 +7,11 @@ import Menu from "./Menu";
 import { useState } from "react";
 import Cart from "./Cart";
 
-export default function Header() {
+interface HeaderProps {
+  cartQuantity: number;
+}
+
+const Header: React.FC<HeaderProps> = (props) => {
   const [open, setOpen] = useState<boolean>(false);
   const [isShow , setIsShow] = useState(false)
   return (
@@ -22,10 +26,13 @@ export default function Header() {
       <img src={characterIcon} alt="avatar" className="avatar" />
       </div> 
       {isShow ? <Cart /> : null}
-      
     </StyledHeader>
   );
 }
+
+export default Header;
+
+
 
 const StyledHeader = styled.header`
   display: flex;

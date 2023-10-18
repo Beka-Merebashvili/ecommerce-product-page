@@ -1,5 +1,7 @@
 import AddCartContainer from "../styled-components/AddCartContainer";
-import AddToCartForm from "./AddToCartForm";
+
+
+
 export default function AddToCart() {
 
 
@@ -24,7 +26,7 @@ export default function AddToCart() {
           <p>$250.00</p>
         </div>
       </div>
-      <AddToCartForm onAddToCart={AddToCart} />
+      
     </AddCartContainer>
   );
 }

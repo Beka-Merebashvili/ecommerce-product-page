@@ -4,8 +4,13 @@ import cartIcon from "../assets/icon-cart.svg";
 import { useState } from "react";
 import styled from "styled-components";
 
-const AddToCartForm = ({ onAddToCart }) => {
+interface AddToCartFormProps {
+  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const AddToCartForm : React.FC<AddToCartFormProps> = (props) => {
   const [quantity, setQuantity] = useState<number>(0);
+  
 
   const handleIncrease = () => {
     setQuantity(quantity + 1);
@@ -17,15 +22,14 @@ const AddToCartForm = ({ onAddToCart }) => {
     }
   };
 
- const handleSubmit = (e) => {
+ const handleSubmit = (e : React.FormEvent)  => {
   e.preventDefault();
 
   if (isNaN(quantity) || quantity <= 0) {
     return;
   }
-
-  onAddToCart(quantity);
 };
+
 
 
   return (
@@ -52,7 +56,6 @@ const AddToCartForm = ({ onAddToCart }) => {
         />
       </div>
       <button type="submit">
-        {" "}
         <img src={cartIcon} alt="cartIcon" /> Add to cart
       </button>
     </StyledForm>
