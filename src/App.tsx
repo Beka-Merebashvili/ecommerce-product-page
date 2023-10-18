@@ -7,14 +7,15 @@ import { useState } from "react";
 
 function App() {
   const [cartQuantity, setCartQuantity] = useState<number>(0);
+  const [empty , setEmpty] = useState<boolean>(true)
 
   return (
     <>
       <Globalstyles />
-      <Header cartQuantity={cartQuantity} />
+      <Header cartQuantity={cartQuantity} empty={empty} />
       <SliderCarousel />
       <AddToCart />
-      <AddToCartForm setCartQuantity={setCartQuantity} />
+      <AddToCartForm setCartQuantity={setCartQuantity} setEmpty={setEmpty} />
     </>
   );
 }

@@ -6,10 +6,12 @@ import styled from "styled-components";
 
 interface AddToCartFormProps {
   setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
+  setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AddToCartForm : React.FC<AddToCartFormProps> = (props) => {
   const [quantity, setQuantity] = useState<number>(0);
+  
   
 
   const handleIncrease = () => {
@@ -28,7 +30,11 @@ const AddToCartForm : React.FC<AddToCartFormProps> = (props) => {
   if (isNaN(quantity) || quantity <= 0) {
     return;
   }
+  props.setCartQuantity(quantity);
+  setQuantity(0);
+  props.setEmpty(false)
 };
+ 
 
 
 

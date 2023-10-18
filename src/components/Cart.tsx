@@ -1,12 +1,32 @@
 import styled from "styled-components";
+import productImg from "../assets/image-product-1-thumbnail.jpg";
+import delateIcon from "../assets/icon-delete.svg";
 
-const Cart = () => {
+interface HeaderProps {
+  cartQuantity: number;
+  empty: boolean;
+}
+
+const Cart: React.FC<HeaderProps> = (props) => {
   return (
     <StyledDiv>
       <h3>Cart</h3>
       <hr />
-      <div className="checkout">
-      <p className="empty">Your cart is empty.</p>
+      <div className="cart">
+        {props.empty ? (
+          <p className="empty">Your cart is empty.</p>
+        ) : (
+          <div className="checkout">
+            <div className="product">
+              <img src={productImg} alt="productImg" className="productImg" />
+              <p className="price">
+                Fall Limited Edition Sneakers $125.00 x 3 <span>375</span>{" "}
+              </p>
+              <img src={delateIcon} alt="delateIcon" className="delateIcon" />
+            </div>
+            <button>Checkout</button>
+          </div>
+        )}
       </div>
     </StyledDiv>
   );
@@ -35,7 +55,7 @@ const StyledDiv = styled.div`
   hr {
     margin: 24px 0;
   }
-  .checkout {
+  .cart {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,5 +66,44 @@ const StyledDiv = styled.div`
     font-size: 16px;
     font-weight: 700;
     line-height: 26px;
+  }
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .product {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .productImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+  }
+  .price {
+    color: #69707d;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    width: 230px;
+  }
+  .delateIcon {
+    width: 14px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  button {
+    width: 327px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: none;
+    background: #ff7e1b;
+    box-shadow: 0px 20px 50px -20px #ff7e1b;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
   }
 `;
