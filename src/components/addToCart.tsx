@@ -1,6 +1,9 @@
 import AddCartContainer from "../styled-components/AddCartContainer";
 import AddToCartForm from "./AddToCartForm";
 export default function AddToCart() {
+
+
+
   return (
     <AddCartContainer>
       <p className="company">Sneaker Company</p>
@@ -21,7 +24,7 @@ export default function AddToCart() {
           <p>$250.00</p>
         </div>
       </div>
-      <AddToCartForm />
+      <AddToCartForm onAddToCart={AddToCart} />
     </AddCartContainer>
   );
 }

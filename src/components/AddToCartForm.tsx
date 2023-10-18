@@ -5,30 +5,28 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const AddToCartForm = ({ onAddToCart }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState<number>(0);
 
   const handleIncrease = () => {
-    setQuantity(parseInt(quantity) + 1);
+    setQuantity(quantity + 1);
   };
 
   const handleDecrease = () => {
-    if (parseInt(quantity) > 0) {
-      setQuantity(parseInt(quantity) - 1);
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = (e) => {
+  e.preventDefault();
 
-    const parsedQuantity = parseInt(quantity, 10);
+  if (isNaN(quantity) || quantity <= 0) {
+    return;
+  }
 
-    if (isNaN(parsedQuantity) || parsedQuantity <= 0) {
-      return;
-    }
+  onAddToCart(quantity);
+};
 
-    onAddToCart(parsedQuantity);
-    setQuantity("");
-  };
 
   return (
     <StyledForm onSubmit={handleSubmit}>
@@ -42,8 +40,8 @@ const AddToCartForm = ({ onAddToCart }) => {
         <input
           type="number"
           id="quantity"
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
+          value={quantity.toString()} // Convert to string
+          onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
           min="0"
         />
         <img
@@ -80,14 +78,16 @@ const StyledForm = styled.form`
   }
   input {
     border: none;
+    outline: none;
     padding-left: 24%;
     width: 170px;
-    height: 30px; 
+    height: 30px;
     background: #f6f8fd;
   }
   .absolute {
     position: absolute;
     top: 50%;
+    cursor: pointer;
   }
   .plus {
     top: 40%;
@@ -110,5 +110,6 @@ const StyledForm = styled.form`
     align-items: center;
     justify-content: center;
     gap: 15px;
+    cursor: pointer;
   }
 `;

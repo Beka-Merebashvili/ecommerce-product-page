@@ -5,9 +5,11 @@ import characterIcon from "../assets/image-avatar.png";
 import Burger from "./Burger";
 import Menu from "./Menu";
 import { useState } from "react";
+import Cart from "./Cart";
 
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
+  const [isShow , setIsShow] = useState(false)
   return (
     <StyledHeader>
       <div className="wrapper">
@@ -16,9 +18,11 @@ export default function Header() {
         <img src={logo} alt="logo" />
       </div>
       <div className="wrapper">
-      <img src={cartIcon} alt="carticon" />
+      <img onClick={() => setIsShow(!isShow)} src={cartIcon} alt="carticon" />
       <img src={characterIcon} alt="avatar" className="avatar" />
-      </div>  
+      </div> 
+      {isShow ? <Cart /> : null}
+      
     </StyledHeader>
   );
 }
@@ -28,6 +32,7 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
+  position: relative;
   .wrapper {
     display: flex;
   align-items: center;
