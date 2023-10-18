@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Globalstyles />
-      <Header cartQuantity={cartQuantity} empty={empty} />
+      <Header cartQuantity={cartQuantity}  setCartQuantity={ setCartQuantity} empty={empty} setEmpty={setEmpty} />
       <SliderCarousel />
       <AddToCart />
       <AddToCartForm setCartQuantity={setCartQuantity} setEmpty={setEmpty} />

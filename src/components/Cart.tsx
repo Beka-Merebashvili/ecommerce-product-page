@@ -4,7 +4,9 @@ import delateIcon from "../assets/icon-delete.svg";
 
 interface HeaderProps {
   cartQuantity: number;
+  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
   empty: boolean;
+  setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Cart: React.FC<HeaderProps> = (props) => {
@@ -20,9 +22,9 @@ const Cart: React.FC<HeaderProps> = (props) => {
             <div className="product">
               <img src={productImg} alt="productImg" className="productImg" />
               <p className="price">
-                Fall Limited Edition Sneakers $125.00 x 3 <span>375</span>{" "}
+                Fall Limited Edition Sneakers $125.00 x {props.cartQuantity} <span>${props.cartQuantity * 125}</span>
               </p>
-              <img src={delateIcon} alt="delateIcon" className="delateIcon" />
+              <img src={delateIcon} alt="delateIcon" className="delateIcon" onClick={() => {props.setEmpty(true), props.setCartQuantity(0)}} />
             </div>
             <button>Checkout</button>
           </div>
@@ -88,6 +90,10 @@ const StyledDiv = styled.div`
     font-weight: 400;
     line-height: 26px;
     width: 230px;
+  }
+  span {
+    color: #1D2026;
+    font-weight: 700;
   }
   .delateIcon {
     width: 14px;

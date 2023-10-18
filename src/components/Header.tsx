@@ -9,7 +9,9 @@ import Cart from "./Cart";
 
 interface HeaderProps {
   cartQuantity: number;
+  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
   empty: boolean;
+  setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
@@ -26,7 +28,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       <img onClick={() => setIsShow(!isShow)} src={cartIcon} alt="carticon" />
       <img src={characterIcon} alt="avatar" className="avatar" />
       </div> 
-      {isShow ? <Cart cartQuantity={props.cartQuantity} empty={props.empty} /> : null}
+      {isShow ? <Cart cartQuantity={props.cartQuantity} setCartQuantity={props.setCartQuantity} empty={props.empty} setEmpty={props.setEmpty} /> : null}
     </StyledHeader>
   );
 }
