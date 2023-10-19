@@ -7,12 +7,6 @@ import Menu from "./Menu";
 import { useState } from "react";
 import Cart from "./Cart";
 
-interface HeaderProps {
-  cartQuantity: number;
-  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
-  empty: boolean;
-  setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 const Header: React.FC<HeaderProps> = (props) => {
   const [open, setOpen] = useState<boolean>(false);

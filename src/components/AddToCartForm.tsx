@@ -5,15 +5,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import Button from "../styled-components/Button";
 
-interface AddToCartFormProps {
-  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
-  setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const AddToCartForm : React.FC<AddToCartFormProps> = (props) => {
+const AddToCartForm: React.FC<AddToCartFormProps> = (props) => {
   const [quantity, setQuantity] = useState<number>(0);
-  
-  
 
   const handleIncrease = () => {
     setQuantity(quantity + 1);
@@ -25,19 +18,16 @@ const AddToCartForm : React.FC<AddToCartFormProps> = (props) => {
     }
   };
 
- const handleSubmit = (e : React.FormEvent)  => {
-  e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
 
-  if (isNaN(quantity) || quantity <= 0) {
-    return;
-  }
-  props.setCartQuantity(quantity);
-  setQuantity(0);
-  props.setEmpty(false)
-};
- 
-
-
+    if (isNaN(quantity) || quantity <= 0) {
+      return;
+    }
+    props.setCartQuantity(quantity);
+    setQuantity(0);
+    props.setEmpty(false);
+  };
 
   return (
     <StyledForm onSubmit={handleSubmit}>
