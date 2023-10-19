@@ -3,6 +3,7 @@ import minusIcon from "../assets/icon-minus.svg";
 import cartIcon from "../assets/icon-cart.svg";
 import { useState } from "react";
 import styled from "styled-components";
+import Button from "../styled-components/Button";
 
 interface AddToCartFormProps {
   setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
@@ -61,9 +62,9 @@ const AddToCartForm : React.FC<AddToCartFormProps> = (props) => {
           className="absolute plus"
         />
       </div>
-      <button type="submit">
+      <Button type="submit">
         <img src={cartIcon} alt="cartIcon" /> Add to cart
-      </button>
+      </Button>
     </StyledForm>
   );
 };
@@ -105,7 +106,7 @@ const StyledForm = styled.form`
   .minus {
     left: 24px;
   }
-  button {
+  /* button {
     width: 327px;
     height: 56px;
     border-radius: 10px;
@@ -120,5 +121,5 @@ const StyledForm = styled.form`
     justify-content: center;
     gap: 15px;
     cursor: pointer;
-  }
+  } */
 `;

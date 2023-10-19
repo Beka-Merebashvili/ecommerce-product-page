@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import productImg from "../assets/image-product-1-thumbnail.jpg";
 import delateIcon from "../assets/icon-delete.svg";
+import Button from "../styled-components/Button";
 
 interface HeaderProps {
   cartQuantity: number;
@@ -26,7 +27,7 @@ const Cart: React.FC<HeaderProps> = (props) => {
               </p>
               <img src={delateIcon} alt="delateIcon" className="delateIcon" onClick={() => {props.setEmpty(true), props.setCartQuantity(0)}} />
             </div>
-            <button>Checkout</button>
+            <Button>Checkout</Button>
           </div>
         )}
       </div>
@@ -100,7 +101,7 @@ const StyledDiv = styled.div`
     height: 16px;
     flex-shrink: 0;
   }
-  button {
+  /* button {
     width: 327px;
     height: 56px;
     flex-shrink: 0;
@@ -111,5 +112,5 @@ const StyledDiv = styled.div`
     color: #fff;
     font-size: 16px;
     font-weight: 700;
-  }
+  } */
 `;
