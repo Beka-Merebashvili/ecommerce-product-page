@@ -7,17 +7,7 @@ import product2 from "../assets/image-product-2.jpg";
 import product3 from "../assets/image-product-3.jpg";
 import product4 from "../assets/image-product-4.jpg";
 
-const ArrowButton = styled.button<{ direction: string }>`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 30px;
-  z-index: 1;
-  ${({ direction }) => (direction === "prev" ? "left: 10px;" : "right: 10px;")}
-`;
+
 
 const PrevArrow = ({ onClick }: { onClick: () => void }) => (
   <ArrowButton direction="prev" onClick={onClick}>
@@ -64,7 +54,6 @@ export default SliderCarousel;
 const CarouselContainer = styled.div`
   max-width: 550px;
   margin: 0 auto;
-
   .slider {
     max-width: 550px;
   }
@@ -73,4 +62,15 @@ const CarouselContainer = styled.div`
     width: 100%;
     height: auto;
   }
+`;
+const ArrowButton = styled.button<{ direction: string }>`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  z-index: 1;
+  ${({ direction }) => (direction === "prev" ? "left: 10px;" : "right: 10px;")}
 `;

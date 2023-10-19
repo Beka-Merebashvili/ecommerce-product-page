@@ -2,7 +2,6 @@ import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import cartIcon from "../assets/icon-cart.svg";
 import characterIcon from "../assets/image-avatar.png";
-import Burger from "./Burger";
 import Menu from "./Menu";
 import { useState } from "react";
 import Cart from "./Cart";
@@ -14,7 +13,6 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <StyledHeader>
       <div className="wrapper">
-        <Burger open={open} setOpen={setOpen} />
         <Menu open={open} setOpen={setOpen} />
         <img src={logo} alt="logo" />
       </div>
@@ -53,6 +51,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   padding: 20px 24px;
   position: relative;
+  z-index: 2;
   .wrapper {
     display: flex;
     align-items: center;

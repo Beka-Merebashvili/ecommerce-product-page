@@ -2,7 +2,6 @@ import Header from "./components/Header";
 import SliderCarousel from "./components/SliderCarousel";
 import AddToCart from "./components/AddToCart";
 import Globalstyles from "./styled-components/GlobalStyles";
-import AddToCartForm from "./components/AddToCartForm";
 import { useState } from "react";
 
 function App() {
@@ -14,8 +13,7 @@ function App() {
       <Globalstyles />
       <Header cartQuantity={cartQuantity}  setCartQuantity={ setCartQuantity} empty={empty} setEmpty={setEmpty} />
       <SliderCarousel />
-      <AddToCart />
-      <AddToCartForm setCartQuantity={setCartQuantity} setEmpty={setEmpty} />
+      <AddToCart setCartQuantity={setCartQuantity} setEmpty={setEmpty} />
     </>
   );
 }

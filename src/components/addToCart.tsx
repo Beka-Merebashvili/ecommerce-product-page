@@ -1,8 +1,8 @@
 import AddCartContainer from "../styled-components/AddCartContainer";
 
+import AddToCartForm from "./AddToCartForm";
 
-
-export default function AddToCart() {
+const AddToCart: React.FC<AddToCartFormProps> = (props) => {
 
 
 
@@ -26,8 +26,9 @@ export default function AddToCart() {
           <p>$250.00</p>
         </div>
       </div>
-      
+      <AddToCartForm setCartQuantity={props.setCartQuantity} setEmpty={props.setEmpty} />
     </AddCartContainer>
   );
 }
  
+export default AddToCart;

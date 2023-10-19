@@ -15,6 +15,9 @@ const Button = styled.button`
     justify-content: center;
     gap: 15px;
     cursor: pointer;
+    img {
+      color: #ffffff;
+    }
 `
 
 export default Button;
