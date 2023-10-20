@@ -44,6 +44,7 @@ const AddToCartForm: React.FC<AddToCartFormProps> = (props) => {
           value={quantity.toString()} // Convert to string
           onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
           min="0"
+          max={999}
         />
         <img
           src={plusIcon}

@@ -69,6 +69,7 @@ const StyledHeader = styled.header`
   }
   .cart {
     position: relative;
+    cursor: pointer;
   }
   .itemQuantity {
     width: 19px;
@@ -98,7 +99,7 @@ const StyledHeader = styled.header`
   /* styles for tablet & desktop */
 
   @media only screen and (min-width: 768px) {
-    /* padding: 28px 165px; */
+    padding: 28px 11.50%;
     margin-bottom: 140px;
     .navigation {
       display: block;
@@ -113,11 +114,12 @@ const StyledHeader = styled.header`
       line-height: 26px;
     }
     hr {
-      width: 100%;
+      width: 77%;
       height: 1px;
       position: absolute;
-      left: 0;
-      top: 80px;
+      left: 11.5%;
+      top: 88px;
+      background: #E4E9F2;
       display: block;
     }
   }
