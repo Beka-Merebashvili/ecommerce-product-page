@@ -30,7 +30,7 @@ const Cart: React.FC<HeaderProps> = (props) => {
                 }}
               />
             </div>
-            <Button>Checkout</Button>
+            <Button onClick={() => {props.setEmpty(true)}}>Checkout</Button>
           </div>
         )}
       </div>
@@ -104,16 +104,4 @@ const StyledDiv = styled.div`
     height: 16px;
     flex-shrink: 0;
   }
-  /* button {
-    width: 327px;
-    height: 56px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    border: none;
-    background: #ff7e1b;
-    box-shadow: 0px 20px 50px -20px #ff7e1b;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-  } */
 `;

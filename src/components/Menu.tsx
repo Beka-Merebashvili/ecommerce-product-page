@@ -58,6 +58,13 @@ const StyledMenu = styled.nav<{ open: boolean }>`
   line-height: 26px;
   cursor: pointer;
   }
+
+
+  /* styles for tablet & desktop */
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledBurger = styled.div<{ open: boolean }>`
@@ -66,4 +73,9 @@ const StyledBurger = styled.div<{ open: boolean }>`
     height: 15px;
     cursor: pointer;
     margin-top: 10px;
+
+
+    @media only screen and (min-width: 768px) {
+    display: none;
+  }
   }`;

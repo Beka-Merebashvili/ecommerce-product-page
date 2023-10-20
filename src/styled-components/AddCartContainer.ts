@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const AddCartContainer = styled.div`
   padding: 24px 24px 80px 24px;
+  max-width: 550px;
+  margin: 0 auto;
   .company {
     color: #ff7e1b;
     font-size: 12px;

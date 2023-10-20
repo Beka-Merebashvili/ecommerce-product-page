@@ -6,7 +6,6 @@ import Menu from "./Menu";
 import { useState } from "react";
 import Cart from "./Cart";
 
-
 const Header: React.FC<HeaderProps> = (props) => {
   const [open, setOpen] = useState<boolean>(false);
   const [isShow, setIsShow] = useState(false);
@@ -15,6 +14,13 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className="wrapper">
         <Menu open={open} setOpen={setOpen} />
         <img src={logo} alt="logo" />
+        <nav className="navigation">
+          <li>Collections</li>
+          <li>Man</li>
+          <li>Woman</li>
+          <li>About</li>
+          <li>Contact</li>
+        </nav>
       </div>
       <div className="wrapper">
         <div className="cart">
@@ -39,6 +45,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           setEmpty={props.setEmpty}
         />
       ) : null}
+      <hr />
     </StyledHeader>
   );
 };
@@ -52,6 +59,9 @@ const StyledHeader = styled.header`
   padding: 20px 24px;
   position: relative;
   z-index: 2;
+  .navigation {
+    display: none;
+  }
   .wrapper {
     display: flex;
     align-items: center;
@@ -80,5 +90,35 @@ const StyledHeader = styled.header`
   .avatar {
     width: 24px;
     height: 24px;
+  }
+  hr {
+    display: none;
+  }
+
+  /* styles for tablet & desktop */
+
+  @media only screen and (min-width: 768px) {
+    /* padding: 28px 165px; */
+    margin-bottom: 140px;
+    .navigation {
+      display: block;
+      display: flex;
+      gap: 32px;
+      margin-left: 40px;
+    }
+    .navigation li {
+      color: #69707d;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 26px;
+    }
+    hr {
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      top: 80px;
+      display: block;
+    }
   }
 `;

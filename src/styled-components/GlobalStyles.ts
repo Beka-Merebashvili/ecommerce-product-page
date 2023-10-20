@@ -9,7 +9,11 @@ const Globalstyles = createGlobalStyle`
     list-style-type: none;
     font-family: 'Space Grotesk', sans-serif;
 }
- 
+ /* body {
+    @media only screen and (min-width: 768px) {
+        padding-left: 165px;
+    }
+ } */
 `
 
 export default Globalstyles
