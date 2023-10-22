@@ -30,6 +30,7 @@ const AddCartContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 28px 0;
   }
   .price {
     color: #1d2026;
@@ -64,6 +65,10 @@ font-size: 16px;
 font-weight: 700;
 line-height: 26px;  
 text-decoration: line-through;
+  }
+
+  @media only screen and (min-width: 768px) {
+   
   }
 `;
 

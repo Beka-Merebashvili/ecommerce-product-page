@@ -62,6 +62,9 @@ const CarouselContainer = styled.div`
     width: 100%;
     height: auto;
   }
+  @media only screen and (min-width: 768px) {
+   margin-right: 0;
+  }
 `;
 const ArrowButton = styled.button<{ direction: string }>`
   position: absolute;

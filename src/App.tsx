@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import SliderCarousel from "./components/SliderCarousel";
 import AddToCart from "./components/AddToCart";
 import Globalstyles from "./styled-components/GlobalStyles";
+import StyledMain from "./styled-components/StyledMain";
 import { useState } from "react";
 
 function App() {
@@ -12,8 +13,10 @@ function App() {
     <>
       <Globalstyles />
       <Header cartQuantity={cartQuantity}  setCartQuantity={ setCartQuantity} empty={empty} setEmpty={setEmpty} />
+      <StyledMain>
       <SliderCarousel />
       <AddToCart setCartQuantity={setCartQuantity} setEmpty={setEmpty} />
+      </StyledMain>
     </>
   );
 }

@@ -3,13 +3,11 @@ import productImg from "../assets/image-product-1-thumbnail.jpg";
 import delateIcon from "../assets/icon-delete.svg";
 import Button from "../styled-components/Button";
 
-
-
 const Cart: React.FC<HeaderProps> = (props) => {
   return (
     <StyledDiv>
       <h3>Cart</h3>
-      <hr />
+      <hr className="line" />
       <div className="cart">
         {props.empty ? (
           <p className="empty">Your cart is empty.</p>
@@ -30,7 +28,13 @@ const Cart: React.FC<HeaderProps> = (props) => {
                 }}
               />
             </div>
-            <Button onClick={() => {props.setEmpty(true)}}>Checkout</Button>
+            <Button
+              onClick={() => {
+                props.setEmpty(true);
+              }}
+            >
+              Checkout
+            </Button>
           </div>
         )}
       </div>
@@ -58,7 +62,7 @@ const StyledDiv = styled.div`
     line-height: normal;
     margin-left: 24px;
   }
-  hr {
+  .line {
     margin: 24px 0;
   }
   .cart {

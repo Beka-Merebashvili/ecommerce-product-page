@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           setEmpty={props.setEmpty}
         />
       ) : null}
-      <hr />
+      <hr className="headerLine" />
     </StyledHeader>
   );
 };
@@ -92,7 +92,7 @@ const StyledHeader = styled.header`
     width: 24px;
     height: 24px;
   }
-  hr {
+  .headerLine {
     display: none;
   }
 
@@ -113,7 +113,7 @@ const StyledHeader = styled.header`
       font-weight: 400;
       line-height: 26px;
     }
-    hr {
+    .headerLine {
       width: 77%;
       height: 1px;
       position: absolute;
