@@ -59,16 +59,33 @@ const AddCartContainer = styled.div`
     font-weight: 700;
   }
   .oldPrice p {
-    color: #B6BCC8;
-font-family: Kumbh Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 26px;  
-text-decoration: line-through;
+    color: #b6bcc8;
+    font-family: Kumbh Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    text-decoration: line-through;
   }
 
   @media only screen and (min-width: 768px) {
-   
+    .company {
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+    h2 {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 48px;
+    }
+    .description {
+      font-size: 16px;
+      line-height: 26px;
+      width: 444px;
+    }
+    .priceBox {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 `;
 
