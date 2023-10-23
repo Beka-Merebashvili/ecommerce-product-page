@@ -52,7 +52,7 @@ const StyledDiv = styled.div`
   box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.5);
   position: absolute;
   bottom: -260px;
-  left: 8px;
+  right: 12px;
   z-index: 2;
   padding-top: 24px;
   h3 {
@@ -107,5 +107,10 @@ const StyledDiv = styled.div`
     width: 14px;
     height: 16px;
     flex-shrink: 0;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 360px;
+    right: 89px;
   }
 `;

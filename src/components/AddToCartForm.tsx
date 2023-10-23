@@ -77,6 +77,11 @@ const StyledForm = styled.form`
     justify-content: center;
     position: relative;
   }
+  input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
   input {
     border: none;
     outline: none;
@@ -96,5 +101,17 @@ const StyledForm = styled.form`
   }
   .minus {
     left: 24px;
+  }
+
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    .inputWrapper {
+      width: 157px;
+    }
+    input {
+      width: 40px;
+      padding-left: 10px;
+    }
   }
 `;
