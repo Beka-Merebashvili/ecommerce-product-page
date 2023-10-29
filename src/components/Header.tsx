@@ -99,7 +99,7 @@ const StyledHeader = styled.header`
   /* styles for tablet & desktop */
 
   @media only screen and (min-width: 768px) {
-    padding: 28px 11.50%;
+    padding: 28px 11.5%;
     margin-bottom: 140px;
     .navigation {
       display: block;
@@ -112,6 +112,7 @@ const StyledHeader = styled.header`
       font-size: 15px;
       font-weight: 400;
       line-height: 26px;
+      cursor: pointer;
     }
     .headerLine {
       width: 77%;
@@ -119,8 +120,13 @@ const StyledHeader = styled.header`
       position: absolute;
       left: 11.5%;
       top: 88px;
-      background: #E4E9F2;
+      background: #e4e9f2;
       display: block;
+    }
+    .avatar:hover {
+      border-radius: 50px;
+      border: 2px solid #ff7e1b;
+      cursor: pointer;
     }
   }
 `;
