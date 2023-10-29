@@ -3,12 +3,26 @@ import logo from "../assets/logo.svg";
 import cartIcon from "../assets/icon-cart.svg";
 import characterIcon from "../assets/image-avatar.png";
 import Menu from "./Menu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Cart from "./Cart";
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState(false);
   const [isShow, setIsShow] = useState(false);
+  const [paid, setPaid] = useState(false);
+
+  useEffect(() => {
+    if (paid) {
+      const timer = setTimeout(() => {
+        setPaid(false);
+      }, 3700); // 5000 milliseconds (3.7 seconds)
+
+      return () => {
+        clearTimeout(timer); // Clear the timer if the component unmounts or paid becomes false before the timeout
+      };
+    }
+  }, [paid]);
+
   return (
     <StyledHeader>
       <div className="wrapper">
@@ -43,7 +57,12 @@ const Header: React.FC<HeaderProps> = (props) => {
           setCartQuantity={props.setCartQuantity}
           empty={props.empty}
           setEmpty={props.setEmpty}
+          setIsShow={setIsShow}
+          setPaid={setPaid}
         />
+      ) : null}
+      {paid ? (
+        <p className="paied">Thank you, your order has been received</p>
       ) : null}
       <hr className="headerLine" />
     </StyledHeader>
@@ -94,6 +113,15 @@ const StyledHeader = styled.header`
   }
   .headerLine {
     display: none;
+  }
+  .paied {
+    position: absolute;
+    bottom: -100px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.5px;
+    color: #254e25;
   }
 
   /* styles for tablet & desktop */

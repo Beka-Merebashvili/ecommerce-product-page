@@ -24,13 +24,13 @@ const Cart: React.FC<HeaderProps> = (props) => {
                 alt="delateIcon"
                 className="delateIcon"
                 onClick={() => {
-                  props.setEmpty(true), props.setCartQuantity(0);
+                  props.setEmpty(true), props.setCartQuantity(0) ;
                 }}
               />
             </div>
             <Button
               onClick={() => {
-                props.setEmpty(true);
+                props.setEmpty(true) , props.setIsShow(false) , props.setPaid(true);
               }}
             >
               Checkout
