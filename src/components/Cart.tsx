@@ -3,7 +3,7 @@ import productImg from "../assets/image-product-1-thumbnail.jpg";
 import delateIcon from "../assets/icon-delete.svg";
 import Button from "../styled-components/Button";
 
-const Cart: React.FC<HeaderProps> = (props) => {
+const Cart: React.FC<CartProps> = (props) => {
   return (
     <StyledDiv>
       <h3>Cart</h3>
