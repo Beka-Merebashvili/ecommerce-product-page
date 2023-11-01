@@ -23,3 +23,11 @@ const cartProps: CartProps = {
     setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
     setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
   }
+
+
+  const cartProps = {
+    cartQuantity,
+    setCartQuantity,
+    empty,
+    setEmpty,
+  } as AddToCartFormProps;
