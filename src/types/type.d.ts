@@ -15,8 +15,8 @@ const cartProps: CartProps = {
   setCartQuantity,
   empty,
   setEmpty,
-  setIsShow: () => {}, // Example placeholder for setIsShow
-  setPaid: () => {}, // Example placeholder for setPaid
+  setIsShow: () => {},  
+  setPaid: () => {},  
 };
 
   interface AddToCartFormProps {
