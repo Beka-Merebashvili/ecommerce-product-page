@@ -15,7 +15,7 @@ function App() {
       <Header cartQuantity={cartQuantity}  setCartQuantity={ setCartQuantity} empty={empty} setEmpty={setEmpty} />
       <StyledMain>
       <SliderCarousel />
-      <AddToCart {...cartProps} setCartQuantity={setCartQuantity} setEmpty={setEmpty} />
+      <AddToCart  setCartQuantity={setCartQuantity} setEmpty={setEmpty} />
       </StyledMain>
     </>
   );

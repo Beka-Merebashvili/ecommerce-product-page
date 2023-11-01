@@ -1,6 +1,6 @@
 import AddCartContainer from "../styled-components/AddCartContainer";
 
-import AddToCartForm from "./AddToCartForm";
+import AddToCartForm from "../components/AddToCartForm";
 
 const AddToCart: React.FC<AddToCartFormProps> = (props) => {
   return (
