@@ -22,15 +22,12 @@ npm run dev
 - _React_
 - _Typescript (TSX)_
 - _Styled Components_
-- _sweetalert2_
 - _React Hooks (useState, useEffect)_
-- _framer-motion_
-- _react-icons_
+- _React Slick_
 
 # Links
 
 - Solution URL: [GitHub Code](https://github.com/Beka-Merebashvili/ecommerce-product-page)
-- Live Site URL: [Live Site](https://ecommerce-product-page-lazzzare.vercel.app/)
 
 ## Author 
 

@@ -1,8 +1,11 @@
 import AddCartContainer from "../styled-components/AddCartContainer";
 
-import AddToCartForm from "../components/AddToCartForm";
+import AddToCartForm from "./AddToCartForm";
 
 const AddToCart: React.FC<AddToCartFormProps> = (props) => {
+
+
+
   return (
     <AddCartContainer>
       <p className="company">Sneaker Company</p>
@@ -23,12 +26,9 @@ const AddToCart: React.FC<AddToCartFormProps> = (props) => {
           <p>$250.00</p>
         </div>
       </div>
-      <AddToCartForm
-        setCartQuantity={props.setCartQuantity}
-        setEmpty={props.setEmpty}
-      />
+      <AddToCartForm setCartQuantity={props.setCartQuantity} setEmpty={props.setEmpty} />
     </AddCartContainer>
   );
-};
-
+}
+ 
 export default AddToCart;
