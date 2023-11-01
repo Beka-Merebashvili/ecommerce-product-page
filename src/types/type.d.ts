@@ -4,7 +4,7 @@ interface HeaderProps {
   empty: boolean;
   setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
 }
- 
+
 interface CartProps extends HeaderProps {
   setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
   setPaid: React.Dispatch<React.SetStateAction<boolean>>;
@@ -15,19 +15,11 @@ const cartProps: CartProps = {
   setCartQuantity,
   empty,
   setEmpty,
-  setIsShow: () => {},  
-  setPaid: () => {},  
+  setIsShow: () => {},
+  setPaid: () => {},
 };
 
-  interface AddToCartFormProps {
-    setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
-    setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
-  }
-
-
-  const cartProps = {
-    cartQuantity,
-    setCartQuantity,
-    empty,
-    setEmpty,
-  } as AddToCartFormProps;
+interface AddToCartFormProps {
+  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
+  setEmpty: React.Dispatch<React.SetStateAction<boolean>>;
+}
